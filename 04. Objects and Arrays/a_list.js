@@ -1,10 +1,17 @@
 var createList = function(arr) {
-	var list = {};
-	for (var i = arr.length- 1; i >= 0 ; i--) {
-		list.value = arr[i];
-		list.rest = list;
+	var startObj = {};
+	startObj.val = arr[arr.length - 1];
+	startObj.rest = null;
+	var tmp = startObj;
+	for (var i = arr.length - 2; i >= 0 ; i--) {
+		var newObj = {};
+		newObj.val = arr[i];
+		newObj.rest = {
+			tmp
+		}
+		tmp = newObj;
 	};
-	return list;
+	return tmp;
 }
 var arr = [1, 2, 3];
 createList(arr);
