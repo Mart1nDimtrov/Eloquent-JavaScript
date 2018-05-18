@@ -5,5 +5,5 @@ var createSelfReference = function() {
 	return startObj;
 }
 
-createSelfReference(arr);
+createSelfReference();
 
